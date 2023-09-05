@@ -1,9 +1,21 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET home page. */
+const messages = [
+  {
+    text: "Hey! There",
+    user: "Breniie",
+    added: new Date(),
+  },
+  {
+    text: "Kremlin Joined the party",
+    user: "Putin",
+    added: new Date(),
+  }
+]
+
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Message Board', messages: messages});
 });
 
 module.exports = router;
